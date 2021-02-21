@@ -1,8 +1,11 @@
 public class Solution {
     public bool CanFinish(int numCourses, int[][] prerequisites) {
+        
+        //This question is solved using Top order Topological sort
         Dictionary<int, List<int>> map = new Dictionary<int, List<int>>();
         int[] indegree = new int[numCourses];
         
+        //Fill the adjacency list map and indegree array
         foreach(int[] pre in prerequisites)
         {
             if(!map.ContainsKey(pre[1]))
@@ -18,6 +21,7 @@ public class Solution {
             indegree[pre[0]]++;
         }
         
+        //put all the courses with indegree(dependencies)==0 into the queue
         Queue<int> bfs = new Queue<int>();
         for(int i = 0; i<numCourses; i++)
         {
@@ -27,6 +31,8 @@ public class Solution {
             }
         }
         
+        //increase the count if you pop a course with indegree==0 from the queue
+        //Add any course from the adjacency list of that course to the queue if they have indegree == 0
         int count = 0;
         while(bfs.Count != 0)
         {
