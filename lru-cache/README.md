@@ -1,3 +1,4 @@
+[Discussion Post (created on 9/2/2021 at 21:30)](https://leetcode.com/problems/lru-cache/solution/)  
 <h2>146. LRU Cache</h2><h3>Medium</h3><hr><div><p>Design a data structure that follows the constraints of a <strong><a href="https://en.wikipedia.org/wiki/Cache_replacement_policies#LRU" target="_blank">Least Recently Used (LRU) cache</a></strong>.</p>
 
 <p>Implement the <code>LRUCache</code> class:</p>
