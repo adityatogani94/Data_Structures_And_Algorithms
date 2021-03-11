@@ -1,3 +1,4 @@
+[Discussion Post (created on 10/2/2021 at 23:46)](https://leetcode.com/problems/implement-trie-prefix-tree/solution/)  
 <h2>208. Implement Trie (Prefix Tree)</h2><h3>Medium</h3><hr><div><p>Implement a trie with <code>insert</code>, <code>search</code>, and <code>startsWith</code> methods.</p>
 
 <p><b>Example:</b></p>
