@@ -1,15 +1,52 @@
 public class Solution {
     public int MissingNumber(int[] nums) {
-        Array.Sort(nums);
-        int count = 0;
-        foreach(int i in nums)
+        bool hasZero = false;
+        int indexThatHasZero = 0;
+        for(int i=0; i<nums.Length; i++)
         {
-            if(i != count)
+            if(nums[i]==0)
             {
-                return count;
+                indexThatHasZero = i;
+                hasZero = true;
             }
-            count++;
+            if(Math.Abs(nums[i]) <= nums.Length-1)
+            {
+                nums[Math.Abs(nums[i])] *= -1;
+            }
         }
-        return count;
+        
+        if(!hasZero)
+        {
+            return 0;
+        }
+        
+        bool hasIndexThatHasZero = false;
+        
+        for(int i=0; i<nums.Length; i++)
+        {
+            if(Math.Abs(nums[i])==indexThatHasZero)
+            {
+                hasIndexThatHasZero = true;
+            }
+        }
+        
+        if(!hasIndexThatHasZero)
+        {
+            return indexThatHasZero;
+        }
+        
+        for(int i=0; i<nums.Length; i++)
+        {
+            if(nums[i]==0)
+            {
+                continue;
+            }
+            else if(nums[i] > 0)
+            {
+                return i;
+            }
+        }
+        
+        return nums.Length;
     }
 }
